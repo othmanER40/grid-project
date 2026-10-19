@@ -8,6 +8,10 @@
     object-fit: cover;
 }
 
+.nav .hamburger {
+    display: none;
+}
+
 * {
     margin: 0;
     font-family: "Bitcount Ink", system-ui;
@@ -96,19 +100,41 @@
     }
 }
 
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 64px 0;
+}
+
 @media only screen and (max-width: 768px) {
+    .project-grid {
+        margin-top: 100px;
+    }
+    .nav {
+        padding: 16px 24px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        background-color: white;
+        width: 100%;
+    }
+    .nav .hamburger {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav .container2 {
+        display: none;
+    }
     .project-grid {
         grid-template-areas: "eth eth" "alphabet alphabet" "traveler traveler" "astro cube" "insta insta" "foam foam" "dimensional dimensional" 'cup';
     }
     .overlay:hover {
         font-size: 24px;
     }
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 64px 0;
 }
 
 .container2 img {
@@ -169,4 +195,17 @@ footer {
     font-size: 24px;
     line-height: 2;
     font-weight: 700;
+}
+
+.bar {
+    background-color: black;
+    height: 4px;
+    width: 36px;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+.hamburger {
+    height: 24px;
+    width: 24px;
 }
