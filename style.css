@@ -1,89 +1,225 @@
-.project {
-    position: relative;
-}
-
-.project img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.nav .hamburger {
-    display: none;
-}
-
-* {
-    margin: 0;
-    font-family: "Bitcount Ink", system-ui;
-}
-
-.project .overlay {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    background-color: rgba(255, 255, 255, 0.2);
-    font-size: 35px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    transition: opacity 0.3s ease;
-}
-
-.project:hover .overlay {
-    opacity: 1;
-    cursor: pointer;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-areas: 'eth eth alphabet' 'eth eth traveler' 'astro cube traveler' 'cup insta insta' 'foam foam dimensional';
-    margin: auto;
-    gap: 16px
-}
-
-#eth {
-    grid-area: eth;
-}
-
-#alphabet {
-    grid-area: alphabet;
-}
-
-#traveler {
-    grid-area: traveler;
-}
-
-#astro {
-    grid-area: astro;
-}
-
-#cube {
-    grid-area: cube;
-}
-
-#cub {
-    grid-area: cup;
-}
-
-#insta {
-    grid-area: insta;
-}
-
-#foam {
-    grid-area: foam;
-}
-
-#dimensional {
-    grid-area: dimensional;
-}
-
-@media only screen and (max-width:1100px) {
+    .project {
+        position: relative;
+    }
+    
+    .project img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .nav .hamburger {
+        display: none;
+    }
+    
+    .mobileNav {
+        width: 80px;
+        background-color: white;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        right: -160px;
+        padding: 10px;
+        transition: transform 0.7s;
+    }
+    
+    .mobileNav img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .mobileNav a {
+        text-decoration: none;
+        color: black;
+        margin: 12px 0;
+    }
+    
+    .openNav {
+        transform: translateX(-160px);
+    }
+    
+    * {
+        margin: 0;
+        font-family: "Bitcount Ink", system-ui;
+    }
+    
+    .project .overlay {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        font-size: 35px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        transition: opacity 0.3s ease;
+    }
+    
+    .project:hover .overlay {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    .project-grid {
+        display: grid;
+        grid-template-areas: 'eth eth alphabet' 'eth eth traveler' 'astro cube traveler' 'cup insta insta' 'foam foam dimensional';
+        margin: auto;
+        gap: 16px
+    }
+    
+    #eth {
+        grid-area: eth;
+    }
+    
+    #alphabet {
+        grid-area: alphabet;
+    }
+    
+    #traveler {
+        grid-area: traveler;
+    }
+    
+    #astro {
+        grid-area: astro;
+    }
+    
+    #cube {
+        grid-area: cube;
+    }
+    
+    #cub {
+        grid-area: cup;
+    }
+    
+    #insta {
+        grid-area: insta;
+    }
+    
+    #foam {
+        grid-area: foam;
+    }
+    
+    #dimensional {
+        grid-area: dimensional;
+    }
+    
+    @media only screen and (max-width:1100px) {
+        footer {
+            padding: 32px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 2;
+            font-weight: 700;
+        }
+        .conto {
+            max-width: 100%;
+        }
+        .project-grid {
+            max-width: 95%;
+            grid-template-areas: "eth eth" "alphabet traveler" "astro cube" "insta insta" "cup foam" "dimensional dimensional";
+        }
+    }
+    
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 64px 0;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .project-grid {
+            margin-top: 100px;
+        }
+        .nav {
+            padding: 16px 24px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            background-color: white;
+            width: 100%;
+        }
+        .nav .hamburger {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav .container2 {
+            display: none;
+        }
+        .project-grid {
+            grid-template-areas: "eth eth" "alphabet alphabet" "traveler traveler" "astro cube" "insta insta" "foam foam" "dimensional dimensional" 'cup';
+        }
+        .overlay:hover {
+            font-size: 24px;
+        }
+    }
+    
+    .container2 img {
+        width: 24px;
+        margin: 10px;
+    }
+    
+    .container2 {
+        display: flex;
+        justify-content: space-around;
+        width: 400px;
+    }
+    
+    .container2 p {
+        margin: 10px;
+        transition: all 0.2s;
+    }
+    
+    .container1 {
+        display: flex;
+    }
+    
+    .container1 p {
+        margin-left: 20px;
+    }
+    
+    .container2 p {
+        position: relative;
+    }
+    
+    .container2 p:hover {
+        cursor: pointer;
+    }
+    
+    .container2 p::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #7ceaed;
+        transition: width 0.25s ease;
+    }
+    
+    .container2 p:hover::after {
+        width: 100%;
+    }
+    
+    .conto {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
     footer {
         padding: 32px;
         text-align: center;
@@ -91,121 +227,49 @@
         line-height: 2;
         font-weight: 700;
     }
-    .conto {
-        max-width: 100%;
+    
+    .bar1,
+    .bar2,
+    .bar3 {
+        background-color: black;
+        height: 4px;
+        width: 36px;
+        margin: 6px 0;
+        border-radius: 10px;
     }
-    .project-grid {
-        max-width: 95%;
-        grid-template-areas: "eth eth" "alphabet traveler" "astro cube" "insta insta" "cup foam" "dimensional dimensional";
+    
+    .hamburger {
+        width: 36px;
+        cursor: pointer;
     }
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 64px 0;
-}
-
-@media only screen and (max-width: 768px) {
-    .project-grid {
-        margin-top: 100px;
+    
+    @keyframes fadeBar1 {
+        to {
+            transform: rotate(45deg) translate(15px, 8px);
+        }
     }
-    .nav {
-        padding: 16px 24px;
-        box-sizing: border-box;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        background-color: white;
-        width: 100%;
+    
+    @keyframes fadeBar2 {
+        to {
+            transform: scaleX(0);
+            opacity: 0;
+        }
     }
-    .nav .hamburger {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    
+    @keyframes fadeBar3 {
+        to {
+            transform: rotate(-45deg) translate(15px, -8px);
+        }
     }
-    .nav .container2 {
-        display: none;
+    
+    .animateBar1 {
+        animation: fadeBar1 0.3s forwards;
     }
-    .project-grid {
-        grid-template-areas: "eth eth" "alphabet alphabet" "traveler traveler" "astro cube" "insta insta" "foam foam" "dimensional dimensional" 'cup';
+    
+    .animateBar2 {
+        animation: fadeBar2 0.3s forwards;
     }
-    .overlay:hover {
-        font-size: 24px;
+    
+    .animateBar3 {
+        animation: fadeBar3 0.3s forwards;
     }
-}
-
-.container2 img {
-    width: 24px;
-    margin: 10px;
-}
-
-.container2 {
-    display: flex;
-    justify-content: space-around;
-    width: 400px;
-}
-
-.container2 p {
-    margin: 10px;
-    transition: all 0.2s;
-}
-
-.container1 {
-    display: flex;
-}
-
-.container1 p {
-    margin-left: 20px;
-}
-
-.container2 p {
-    position: relative;
-}
-
-.container2 p:hover {
-    cursor: pointer;
-}
-
-.container2 p::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #7ceaed;
-    transition: width 0.25s ease;
-}
-
-.container2 p:hover::after {
-    width: 100%;
-}
-
-.conto {
-    width: 90%;
-    margin: 0 auto;
-}
-
-footer {
-    padding: 32px;
-    text-align: center;
-    font-size: 24px;
-    line-height: 2;
-    font-weight: 700;
-}
-
-.bar {
-    background-color: black;
-    height: 4px;
-    width: 36px;
-    margin: 3px;
-    border-radius: 10px;
-}
-
-.hamburger {
-    height: 24px;
-    width: 24px;
-}
